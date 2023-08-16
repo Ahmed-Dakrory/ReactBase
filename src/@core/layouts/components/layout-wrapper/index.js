@@ -16,7 +16,7 @@ import {
 import themeConfig from "@configs/themeConfig";
 
 // ** Styles
-import "animate.css/animate.css";
+// import "animate.css/animate .css";
 
 const LayoutWrapper = (props) => {
   // ** Props
@@ -30,7 +30,7 @@ const LayoutWrapper = (props) => {
   const layoutStored = store.layout.layout;
   const contentWidth = store.layout.contentWidth;
   //** Vars
-  const appLayoutCondition =
+  const appLayoutCondition = false;
     (layoutStored.layout === "horizontal" && !routeMeta) ||
     (layoutStored.layout === "horizontal" && routeMeta && !routeMeta.appLayout);
   const Tag = appLayoutCondition ? "div" : Fragment;

@@ -3,25 +3,26 @@ import { createSlice } from "@reduxjs/toolkit";
 
 // ** ThemeConfig Import
 import themeConfig from "@configs/themeConfig";
-
-
+ 
 const initialDirection = () => {
   const item = window.localStorage.getItem("direction");
   //** Parse stored json or if none return initialValue
-  return item ? JSON.parse(item) : themeConfig.layout.isRTL;
+  return true;
 };
 
 const initialSkin = () => {
   const item = window.localStorage.getItem("skin");
   //** Parse stored json or if none return initialValue
-  return item ? JSON.parse(item) : themeConfig.layout.skin;
+  return true;
 };
-
+ 
 export const layoutSlice = createSlice({
   name: "layout",
   initialState: {
     skin: initialSkin(),
     isRTL: initialDirection(),
+    layout: themeConfig.layout.type,
+    lastLayout: themeConfig.layout.type,
   },
   reducers: {
     handleRTL: (state, action) => {
