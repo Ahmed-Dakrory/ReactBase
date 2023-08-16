@@ -38,32 +38,32 @@ const HorizontalLayout = (props) => {
     const domain_url = themeConfig.url
     const token = (localStorage.getItem("token"))
     
-    if (token === null | token === "") {
-      localStorage.removeItem("token")
-      navigate('/Login')
-    } else {
-      const config = {
-        headers: { Authorization: `Bearer ${token}` }
-      }
-    try {
+    // if (token === null | token === "") {
+    //   localStorage.removeItem("token")
+    //   navigate('/Login')
+    // } else {
+    //   const config = {
+    //     headers: { Authorization: `Bearer ${token}` }
+    //   }
+    // try {
 
-      const result =  await axios.get(`${domain_url}/statistics`, config)
-      const data = result.data
-      if (data.status === 429) {
-        localStorage.removeItem("token")
-        navigate('/Login')
-      } else if (data.status === 200) {
-      } else {
-        localStorage.removeItem("token")
-        navigate('/Login')
-      }
-    } catch (e) {
+    //   const result =  await axios.get(`${domain_url}/statistics`, config)
+    //   const data = result.data
+    //   if (data.status === 429) {
+    //     localStorage.removeItem("token")
+    //     navigate('/Login')
+    //   } else if (data.status === 200) {
+    //   } else {
+    //     localStorage.removeItem("token")
+    //     navigate('/Login')
+    //   }
+    // } catch (e) {
       
-      localStorage.removeItem("token")
-      navigate('/Login')
-    }
+    //   localStorage.removeItem("token")
+    //   navigate('/Login')
+    // }
     
-    }
+    // }
   }
 
   useEffect(() => {
